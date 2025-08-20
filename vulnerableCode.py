@@ -11,24 +11,24 @@ def create_session_noncompliant():
 # sql injection
 
 # def run_insecure_query(request):
-#     import sqlite3
+    import sqlite3
 
-#     # Retrieve user input
-#     username = request.GET.get("name")
+    # Retrieve user input
+    username = request.GET.get("name")
 
-#     # Build the SQL statement unsafely
+    # Build the SQL statement unsafely
     
-#     sql_statement = f"SELECT * FROM Users WHERE name = {username};"
+    sql_statement = f"SELECT * FROM Users WHERE name = {username};"
 
-#     # Open the database connection
-#     conn = sqlite3.connect("example.db")
-#     try:
-#         db = conn.cursor()
-#         # Still unsafe: concatenated user input allows SQL injection
-#         db.execute(sql_statement)
-#         conn.commit()
-#     finally:
-#         conn.close()
+    # Open the database connection
+    conn = sqlite3.connect("example.db")
+    try:
+        db = conn.cursor()
+        # Still unsafe: concatenated user input allows SQL injection
+        db.execute(sql_statement)
+        conn.commit()
+    finally:
+        conn.close()
 
 ####
 # Resource Leak
